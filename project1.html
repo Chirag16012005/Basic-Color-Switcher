@@ -3,9 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Color switcher</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div class="canvas">
+    <h1>Color Scheme Switcher</h1>
+    <span class="button" id="blue"></span>
+    <span class="button" id="red"></span>
+    <span class="button" id="green"></span>
+    <span class="button" id="yellow"></span>
+    <span class="button" id="grey"></span> 
+    <h2>Try clicking the buttons to change the background color!</h2>
+    <div class="input1"><input type="text" placeholder="Type here" id="textColorInput"></div>
+    <h2>You can also change by typing a color of your choice.</h2>
+    <div><button id="changeTextColor">Change BG Color</button></div>
+    </div>
 </body>
+<script>
+    const b=document.querySelectorAll('.button');
+    b.forEach((button)=>{
+        button.addEventListener('click',()=>{
+            const c=button.id;
+            document.body.style.backgroundColor=c;
+        });
+    })
+    const a=document.querySelector('#textColorInput');
+    const changeTextColorButton=document.querySelector('#changeTextColor');
+    changeTextColorButton.addEventListener('click',()=>{
+        document.body.style.backgroundColor=a.value;
+    });
+</script>
 </html>
